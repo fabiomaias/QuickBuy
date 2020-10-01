@@ -10,7 +10,12 @@ namespace QuickBuy.Domain.Entities
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Name))
+                AddMessageValidation("O Nome não pode ser vazio");
+
+            if (string.IsNullOrEmpty(Description))
+                AddMessageValidation("A Descrição não pode ser vazia");
+
         }
     }
 }
